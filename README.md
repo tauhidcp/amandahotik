@@ -8,6 +8,9 @@
 - Weblaz
 - Fastplaz 
 
+### Dependency
+- Delphi RouterOS API https://github.com/Chupaka/Delphi-RouterOS-API 
+
 ### Features
 - not available yet
 
