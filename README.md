@@ -17,5 +17,8 @@
 ### Contact
 - tauhid.stmik@gmail.com
 
+### Credit
+- SB Admin 2 Template https://startbootstrap.com/theme/sb-admin-2
+
 ### License
 Free and Open Source
