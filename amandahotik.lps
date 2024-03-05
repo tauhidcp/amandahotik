@@ -17,14 +17,14 @@
       <Unit>
         <Filename Value="routes.pas"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="64" Y="12"/>
+        <CursorPos X="70" Y="12"/>
         <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="amandahotik_controller.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="41"/>
         <CursorPos X="72" Y="78"/>
         <UsageCount Value="32"/>
@@ -33,19 +33,9 @@
       <Unit>
         <Filename Value="admin_controller.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="46"/>
         <CursorPos X="54" Y="55"/>
-        <UsageCount Value="23"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="iface_controller.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="80"/>
-        <CursorPos X="52" Y="88"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit>
@@ -62,12 +52,17 @@
         <CursorPos X="32" Y="70"/>
         <UsageCount Value="9"/>
       </Unit>
+      <Unit>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="52"/>
+        <CursorPos X="97" Y="108"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="amandahotik_controller.pas"/>
-        <Caret Line="71" Column="58" TopLine="62"/>
-      </Position>
       <Position>
         <Filename Value="amandahotik_controller.pas"/>
         <Caret Line="72" Column="20" TopLine="64"/>
@@ -137,22 +132,6 @@
         <Caret Line="12" Column="46"/>
       </Position>
       <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="53" Column="108" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="24" Column="33"/>
-      </Position>
-      <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="51" Column="34" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="50" Column="33" TopLine="36"/>
-      </Position>
-      <Position>
         <Filename Value="amandahotik_controller.pas"/>
         <Caret Line="26" Column="48" TopLine="12"/>
       </Position>
@@ -169,20 +148,16 @@
         <Caret Line="66" Column="3" TopLine="56"/>
       </Position>
       <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="88" Column="29" TopLine="75"/>
-      </Position>
-      <Position>
         <Filename Value="admin_controller.pas"/>
         <Caret Line="55" Column="45" TopLine="44"/>
       </Position>
       <Position>
-        <Filename Value="iface_controller.pas"/>
-        <Caret Line="88" Column="51" TopLine="80"/>
-      </Position>
-      <Position>
         <Filename Value="admin_controller.pas"/>
         <Caret Line="55" Column="56" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="24" Column="33"/>
       </Position>
     </JumpHistory>
     <RunParams>

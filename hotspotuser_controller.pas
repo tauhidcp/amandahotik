@@ -1,4 +1,4 @@
-unit iface_controller;
+unit hotspotuser_controller;
 
 {$mode ObjFPC}{$H+}
 
@@ -7,13 +7,13 @@ interface
 uses
   Classes, SysUtils, html_lib, fpcgi, fpjson, json_lib, HTTPDefs, 
     fastplaz_handler, database_lib, dateutils, string_helpers, 
-    datetime_helpers, array_helpers, json_helpers, RouterOSAPI, amandahotik_controller;
+    datetime_helpers, array_helpers, json_helpers, RouterOSAPI;
 
 type
 
-  { TIfaceController }
+  { THotspotuserController }
 
-  TIfaceController = class(TMyCustomController)
+  THotspotuserController = class(TMyCustomController)
   private
     function Tag_MainContent_Handler(const TagName: string; Params: TStringList
       ): string;
@@ -30,18 +30,19 @@ implementation
 
 uses theme_controller, common;
 
-constructor TIfaceController.CreateNew(AOwner: TComponent; CreateMode: integer);
+constructor THotspotuserController.CreateNew(AOwner: TComponent; 
+  CreateMode: integer);
 begin
   inherited CreateNew(AOwner, CreateMode);
   BeforeRequest := @BeforeRequestHandler;
 end;
 
-destructor TIfaceController.Destroy;
+destructor THotspotuserController.Destroy;
 begin
   inherited Destroy;
 end;
 
-function TIfaceController.getAllData: String;
+function THotspotuserController.getAllData: String;
 var
   Res         : TRosApiResult;
   i           : integer;
@@ -68,13 +69,13 @@ begin
 end;
 
 // Init First
-procedure TIfaceController.BeforeRequestHandler(Sender: TObject; 
+procedure THotspotuserController.BeforeRequestHandler(Sender: TObject; 
   ARequest: TRequest);
 begin
 end;
 
 // GET Method Handler
-procedure TIfaceController.Get;
+procedure THotspotuserController.Get;
 var
 jData : TJSONData;
 dataiface : TJSONArray;
@@ -85,21 +86,21 @@ begin
     dataiface := jData as TJSONArray;
     Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
     ThemeUtil.Assign('$userlogin', _SESSION['userlogin']);
-    ThemeUtil.Assign('$tahun', FormatDateTime('Y',Now));
+    ThemeUtil.Assign('$tahun', FormatDateTime('yyyy',Now));
     ThemeUtil.AssignVar['$inface']:=@dataiface;
-    ThemeUtil.Assign('$halaman', ThemeUtil.RenderFromContent(nil, '', 'themes/sbadmin/templates/pages/iface.html'));
+    ThemeUtil.Assign('$halaman', ThemeUtil.RenderFromContent(nil, '', 'themes/sbadmin/templates/pages/hotspotuser.html'));
     ThemeUtil.Layout := 'admin';
     Response.Content := ThemeUtil.Render();
   end else Redirect(BaseURL);
 end;
 
 // POST Method Handler
-procedure TIfaceController.Post;
+procedure THotspotuserController.Post;
 begin
   Response.Content := 'This is POST Method';
 end;
 
-function TIfaceController.Tag_MainContent_Handler(const TagName: string; 
+function THotspotuserController.Tag_MainContent_Handler(const TagName: string; 
   Params: TStringList): string;
 begin
 
@@ -107,6 +108,7 @@ begin
   Result:=ThemeUtil.RenderFromContent(@TagController, '','themes/sbadmin/templates/admin.html');
 
 end;
+
 
 end.
 

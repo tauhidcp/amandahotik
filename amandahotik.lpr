@@ -5,7 +5,7 @@ program amandahotik;
 uses
   {$IFNDEF Windows}cthreads, {$ENDIF}
   fpcgi, sysutils, fastplaz_handler, common, amandahotik_controller, routes,
-  admin_controller, iface_controller;
+  admin_controller, hotspotuser_controller;
 
 begin
   Application.Title := string( Config.GetValue(_SYSTEM_SITENAME, _APP));

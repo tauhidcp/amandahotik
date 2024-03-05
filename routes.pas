@@ -9,10 +9,10 @@ uses
 
 implementation
 
-uses amandahotik_controller, admin_controller, iface_controller;
+uses amandahotik_controller, admin_controller, hotspotuser_controller;
 
 initialization
-  Route[ '/admin/iface'] := TIfaceController;
+  Route[ '/admin/hotspotuser'] := THotspotuserController;
   Route[ '/admin'] := TAdminController;
   Route[ '/'] := TAmandahotikController; // Main Controller
 
