@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="laz_synapse"/>
+      </Item>
+      <Item>
         <PackageName Value="LCL"/>
       </Item>
       <Item>
@@ -43,6 +46,14 @@
       </Unit>
       <Unit>
         <Filename Value="amandahotik_controller.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="admin_controller.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="iface_controller.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

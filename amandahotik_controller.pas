@@ -7,9 +7,12 @@ interface
 uses
   Classes, SysUtils, html_lib, fpcgi, fpjson, json_lib, HTTPDefs, 
     fastplaz_handler, database_lib, dateutils, string_helpers, 
-    datetime_helpers, array_helpers, json_helpers;
+    datetime_helpers, array_helpers, json_helpers, RouterOSAPI;
 
 type
+
+  { TAmandahotikController }
+
   TAmandahotikController = class(TMyCustomController)
   private
     function Tag_MainContent_Handler(const TagName: string; Params: TStringList
@@ -18,10 +21,11 @@ type
   public
     constructor CreateNew(AOwner: TComponent; CreateMode: integer); override;
     destructor Destroy; override;
-
     procedure Get; override;
     procedure Post; override;
+
   end;
+
 
 implementation
 
@@ -39,6 +43,8 @@ begin
   inherited Destroy;
 end;
 
+
+
 // Init First
 procedure TAmandahotikController.BeforeRequestHandler(Sender: TObject; 
   ARequest: TRequest);
@@ -49,21 +55,40 @@ end;
 procedure TAmandahotikController.Get;
 begin
   Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
-  Response.Content := ThemeUtil.Render();
+  ThemeUtil.Assign('$error','');
+  Response.Content := ThemeUtil.RenderFromContent(nil, '','themes/sbadmin/templates/login.html');
 end;
 
 // POST Method Handler
 procedure TAmandahotikController.Post;
+var
+  login       : Boolean;
+  ROS : TRosApiClient;
 begin
-  Response.Content := 'This is POST Method';
+   ROS := TRosApiClient.Create;
+
+   login := ROS.Connect(_POST['host'], _POST['username'], _POST['password'], _POST['port']);
+
+   if login then
+      begin
+        _SESSION['userlogin'] := _POST['username'];
+        _SESSION['host'] := _POST['host'];
+        _SESSION['username'] := _POST['username'];
+        _SESSION['password'] := _POST['password'];
+        _SESSION['port'] := _POST['port'];
+        Redirect('./admin'); end else
+     begin
+       ThemeUtil.Assign('$error', '<div style="font-size: 13px;" class="alert alert-danger alert-dismissible">'+
+                                                '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'+
+                                                'Login Failed!'+
+                                                '</div>');
+       Response.Content := ThemeUtil.RenderFromContent(nil, '','themes/sbadmin/templates/login.html');
+     end;
 end;
 
 function TAmandahotikController.Tag_MainContent_Handler(const TagName: string; 
   Params: TStringList): string;
 begin
-
-  // your code here
-  Result:=h3('Hello "Main" Module ... FastPlaz !');
 
 end;
 

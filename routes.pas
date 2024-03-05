@@ -9,10 +9,11 @@ uses
 
 implementation
 
-uses info_controller, amandahotik_controller;
+uses amandahotik_controller, admin_controller, iface_controller;
 
 initialization
-  Route[ 'info'] := TInfoModule;
+  Route[ '/admin/iface'] := TIfaceController;
+  Route[ '/admin'] := TAdminController;
   Route[ '/'] := TAmandahotikController; // Main Controller
 
 end.
