@@ -84,6 +84,8 @@ begin
     jData := GetJSON(getAllData).GetData('interface');
     dataiface := jData as TJSONArray;
     Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
+    ThemeUtil.Assign('$userlogin', _SESSION['userlogin']);
+    ThemeUtil.Assign('$tahun', FormatDateTime('yyyy',Now));
     ThemeUtil.AssignVar['$inface']:=@dataiface;
     ThemeUtil.Assign('$halaman', ThemeUtil.RenderFromContent(nil, '', 'themes/sbadmin/templates/pages/iface.html'));
     ThemeUtil.Layout := 'admin';

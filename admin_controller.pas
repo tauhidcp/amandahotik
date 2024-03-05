@@ -49,7 +49,10 @@ procedure TAdminController.Get;
 begin
   if not (_SESSION['userlogin'] = '') then
     begin
+
       Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
+      ThemeUtil.Assign('$userlogin', _SESSION['userlogin']);
+      ThemeUtil.Assign('$tahun', FormatDateTime('yyyy',Now));
       ThemeUtil.Assign('$halaman', ThemeUtil.RenderFromContent(nil, '', 'themes/sbadmin/templates/pages/home.html'));
       ThemeUtil.Layout := 'admin';
       Response.Content := ThemeUtil.Render();

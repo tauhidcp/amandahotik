@@ -49,7 +49,10 @@ procedure TAdminController.Get;
 begin
   if not (_SESSION['userlogin'] = '') then
     begin
+
       Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
+      ThemeUtil.Assign('$userlogin', _SESSION['userlogin']);
+      ThemeUtil.Assign('$tahun', FormatDateTime('Y',Now));
       ThemeUtil.Assign('$halaman', ThemeUtil.RenderFromContent(nil, '', 'themes/sbadmin/templates/pages/home.html'));
       ThemeUtil.Layout := 'admin';
       Response.Content := ThemeUtil.Render();
@@ -57,6 +60,10 @@ begin
       if (_GET['logout'] = 'yes') then
       begin
         _SESSION['userlogin'] := '';
+        _SESSION['host'] := '';
+        _SESSION['username'] := '';
+        _SESSION['password'] := '';
+        _SESSION['port'] := '';
         SessionController.EndSession;
         Redirect(BaseURL);
       end;

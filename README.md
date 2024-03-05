@@ -2,7 +2,7 @@
 
 ## Aplikasi Manajemen Bandwidth dan Pengguna Hotspot Mikrotik
 
-#### Install XAMPP and copy the source to your htdocs folder (Windows 64 Bit only)
+#### Install XAMPP and copy the source to your htdocs folder (Windows 64 Bit only). Another version? compile your self!
 
 ### Requirement
 - Free Pascal 3.2.2 
