@@ -1,6 +1,6 @@
 {
   "systems" : {
-    "sitename" : "AMANDAHOTIK",
+    "sitename" : "AMandaHoTik",
     "slogan" : "Aplikasi Manajemen Bandwidth dan Pengguna Hotspot Mikrotik",
     "baseurl" : "http://localhost/amandahotik/",
     "admin_email" : "tauhid.stmik@gmail.com",
@@ -18,15 +18,15 @@
   },
   "database" : {
     "default" : {
-      "driver" : "MySQL 5.7",
+      "driver" : "sqlite3",
       "hostname" : "localhost",
       "port" : "",
-      "username" : "your_username",
-      "password" : "your_password",
-      "database_name" : "your_database",
+      "username" : "",
+      "password" : "",
+      "database_name" : "login.db",
       "charset" : "",
       "prefix" : "",
-      "library" : "..\/libs\/win\/libmysql.dll"
+      "library" : "sqlite3.dll"
     }
   },
   "mailer" : {

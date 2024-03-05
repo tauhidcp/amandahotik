@@ -1,14 +1,14 @@
-# AMANDAHOTIK
+# AMandaHoTik
 
 ## Aplikasi Manajemen Bandwidth dan Pengguna Hotspot Mikrotik
 
-#### Install XAMPP and copy the source to your htdocs folder 
+#### Install XAMPP and copy the source to your htdocs folder (Windows 64 Bit only)
 
 ### Requirement
 - Free Pascal 3.2.2 
 - Lazarus 3.2
-- Weblaz 
-- Fastplaz 
+- WebLaz 
+- Fastplaz Web Framework
 
 ### Dependency
 - Delphi RouterOS API https://github.com/Chupaka/Delphi-RouterOS-API 
