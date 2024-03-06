@@ -2,7 +2,7 @@
 
 ## Aplikasi Manajemen Bandwidth dan Pengguna Hotspot Mikrotik
 
-#### Install XAMPP and copy the source to your htdocs folder (Windows 64 Bit only). Another version? compile your self!
+#### Install XAMPP, create amandahotik folder in your htdocs folder and copy the source (Windows 64 Bit only). Another version? compile your self!
 
 ### Requirement
 - Free Pascal 3.2.2 
@@ -15,7 +15,13 @@
 - Synapse https://www.ararat.cz/synapse/doku.php/download
 
 ### Features
-- not available yet
+- Login and Logout 
+- Retrieve Hotspot User from RouterOS (soon)
+- Clear Counter dan Delete User (soon)
+- Generate Hotspot User (soon) 
+- Export user to pdf, xls dan HTML (soon)
+- Manage User's Quota and Bandwidth (soon)
+- Need more features? modify it your self!   
 
 ### Contact
 - tauhid.stmik@gmail.com
