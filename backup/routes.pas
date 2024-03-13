@@ -5,7 +5,7 @@ unit routes;
 interface
 
 uses
-  Classes, SysUtils, fpjson, fastplaz_handler, Koneksi;
+  Classes, SysUtils, fpjson, fastplaz_handler;
 
 implementation
 

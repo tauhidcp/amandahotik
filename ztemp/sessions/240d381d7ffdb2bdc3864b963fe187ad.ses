@@ -1,0 +1,13 @@
+[session]
+active=1
+ipaddr=::1
+start=3/13/2024 8:11:00 AM
+last=3/13/2024 8:36:16 AM
+
+[data]
+useragent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+userlogin=admin
+host=192.168.1.9
+user=admin
+pass=
+port=8728

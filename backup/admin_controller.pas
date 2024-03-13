@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, html_lib, fpcgi, fpjson, json_lib, HTTPDefs, 
     fastplaz_handler, database_lib, dateutils, string_helpers, 
-    datetime_helpers, array_helpers, json_helpers;
+    datetime_helpers, array_helpers, json_helpers, Koneksi;
 
 type
   TAdminController = class(TMyCustomController)
@@ -22,6 +22,9 @@ type
     procedure Get; override;
     procedure Post; override;
   end;
+
+  var
+    con : TKoneksi;
 
 implementation
 

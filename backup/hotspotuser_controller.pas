@@ -27,7 +27,7 @@ type
   end;
 
   var
-    con  : TKoneksi;
+    con         : TKoneksi;
 
 
 implementation
