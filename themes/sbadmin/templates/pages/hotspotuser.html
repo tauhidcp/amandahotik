@@ -57,12 +57,44 @@
 								</button>
 							</div>
 							<div class="modal-body">
-							
+							<form class="user" name="login_form" method="post" action="[$baseurl]">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Username" style="font-size: 13px;" name="nama" type="text" autofocus required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" style="font-size: 13px;" name="passw" type="text" required>
+                                    </div>
+									<div class="form-group">
+                                        <select class="form-control" style="font-size: 13px;" required>
+										  <option value="">-Select Group-</option>
+										  <option value="1">One</option>
+										  <option value="2">Two</option>
+										  <option value="3">Three</option>
+										</select>
+                                    </div>
+									<div class="form-group">
+                                        <input class="form-control" style="font-size: 13px;" name="limit" type="number" required>
+                                    </div>
+									<div class="form-group row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" name="host"
+													placeholder="IP Address..." required>
+											</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" name="port"
+													placeholder="Port..." value="8728" required>
+											</div>
+										</div>
+									<div class="form-group">
+                                        <input class="form-control" placeholder="Catatan" style="font-size: 13px;" name="note" type="text">
+                                    </div>
+                                </fieldset>
 							</div>
 							<div class="modal-footer">
-								<button class="btn btn-secondary" type="button">Reset</button>
 								<a class="btn btn-primary">Save Hotspot User</a>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>

@@ -444,3 +444,45 @@
 2024-03-13 09:23:59 | init: handle request: mod=_admin
 2024-03-13 09:24:04 | init: THotspotuserController.create()
 2024-03-13 09:24:04 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:25:05 | init: TAdminController.create()
+2024-03-13 09:25:05 | init: handle request: mod=_admin
+2024-03-13 09:27:41 | init: TAdminController.create()
+2024-03-13 09:27:41 | init: handle request: mod=_admin
+2024-03-13 09:27:43 | init: THotspotuserController.create()
+2024-03-13 09:27:43 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:28:05 | init: THotspotuserController.create()
+2024-03-13 09:28:05 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:28:50 | init: THotspotuserController.create()
+2024-03-13 09:28:50 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:28:51 | init: THotspotuserController.create()
+2024-03-13 09:28:51 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:29:27 | init: THotspotuserController.create()
+2024-03-13 09:29:27 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:29:35 | init: TAdminController.create()
+2024-03-13 09:29:35 | init: handle request: mod=_admin
+2024-03-13 09:29:35 | init: TAmandahotikController.create()
+2024-03-13 09:29:35 | init: handle request: mod=_
+2024-03-13 09:29:44 | init: TAmandahotikController.create()
+2024-03-13 09:29:44 | init: handle request: mod=_
+2024-03-13 09:29:45 | init: TAdminController.create()
+2024-03-13 09:29:45 | init: handle request: mod=_admin
+2024-03-13 09:29:48 | init: THotspotuserController.create()
+2024-03-13 09:29:48 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:32:24 | init: THotspotuserController.create()
+2024-03-13 09:32:24 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:34:23 | init: THotspotuserController.create()
+2024-03-13 09:34:23 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:35:03 | init: THotspotuserController.create()
+2024-03-13 09:35:03 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:36:10 | init: THotspotuserController.create()
+2024-03-13 09:36:10 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:37:19 | init: THotspotuserController.create()
+2024-03-13 09:37:19 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:38:16 | init: THotspotuserController.create()
+2024-03-13 09:38:16 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:38:40 | init: THotspotuserController.create()
+2024-03-13 09:38:40 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:38:48 | init: THotspotuserController.create()
+2024-03-13 09:38:48 | init: handle request: mod=_admin_hotspotuser
+2024-03-13 09:39:05 | init: THotspotuserController.create()
+2024-03-13 09:39:05 | init: handle request: mod=_admin_hotspotuser
