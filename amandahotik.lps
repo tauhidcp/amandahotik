@@ -10,13 +10,13 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="32"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="42"/>
       </Unit>
       <Unit>
         <Filename Value="routes.pas"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="55" Y="8"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -24,26 +24,26 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
         <CursorPos Y="45"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="admin_controller.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <TopLine Value="57"/>
         <CursorPos X="7" Y="24"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="hotspotuser_controller.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="2"/>
+        <TopLine Value="76"/>
         <CursorPos X="10" Y="30"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -52,7 +52,7 @@
         <UnitName Value="Koneksi"/>
         <EditorIndex Value="2"/>
         <CursorPos X="63" Y="77"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
