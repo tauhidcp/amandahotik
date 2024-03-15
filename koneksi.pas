@@ -5,7 +5,7 @@ unit Koneksi;
 interface
 
 uses
-  Classes, SysUtils, RouterOSAPI;
+  Classes, SysUtils, RouterOSAPI, IniFiles;
 
 type
 
@@ -13,6 +13,7 @@ type
 
     TKoneksi = class
     public
+
       procedure setKoneksi(host, user, pass, port : String);
       function getLogin:Boolean;
       function getResult(cmd:String):TRosApiResult;
@@ -38,12 +39,12 @@ end;
 
 procedure TKoneksi.setKoneksi(host, user, pass, port: String);
 begin
-  ROS := TRosApiClient.Create;
-  hostx := host;
-  userx := user;
-  passx := pass;
-  portx := port;
-  ROS.Connect(hostx, userx, passx, portx);
+   ROS := TRosApiClient.Create;
+   hostx := host;
+   userx := user;
+   passx := pass;
+   portx := port;
+   ROS.Connect(host, user, pass, port);
 end;
 
 function TKoneksi.getLogin: Boolean;

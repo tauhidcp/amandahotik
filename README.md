@@ -16,10 +16,10 @@
 
 ### Features
 - Login and Logout 
-- Retrieve Hotspot User from RouterOS (soon)
-- Clear Counter dan Delete User (soon)
+- Manage Hotspot User (Retrieve, Add, Update & Delete)
 - Generate Hotspot User (soon) 
-- Export user to pdf, xls dan HTML (soon)
+- Clear Counter dan Delete User (soon)
+- Export user to pdf, xlsx dan HTML (soon)
 - Manage User's Quota and Bandwidth (soon)
 - Need more features? modify it your self!   
 

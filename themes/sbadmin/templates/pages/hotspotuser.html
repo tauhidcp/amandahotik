@@ -1,4 +1,10 @@
-
+				<style type="text/css">
+					#loadinghapus{
+						display:none;
+					}
+				</style>
+				<link href="[$themefullpath]/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+					
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -6,7 +12,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 style="float:left" class="m-0 font-weight-bold text-primary">Data Hotspot User</h6>
-							<a href="#" data-toggle="modal" data-target="#addupdateModal" style="float:right" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+							<a href="#" data-toggle="modal" data-target="#addupdateModal" style="float:right" class="tambah d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
 							<i class="fas fa-plus fa-sm text-white-50"></i> Add Hotspot User</a>
                         </div>
                         <div class="card-body">
@@ -31,8 +37,8 @@
 										  <td>[aItem.pass]</td>
 										  <td>[aItem.uptime]</td>
 										  <td>
-										    <a href="?op=edit&id=[aItem.id]">Edit</a> |
-											<a href="?deleteuser=[aItem.id]">Delete</a>
+										    <a href="#" data-toggle="modal" id="[aItem.id]" name="[aItem.name]" pass="[aItem.pass]" group="[aItem.group]" limit="[aItem.uptime]" comment="[aItem.comment]" data-target="#addupdateModal" class="edit d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Edit</a>
+											<a href="#" data-toggle="modal" id="[aItem.id]" name="[aItem.name]" data-target="#deleteModal" class="hapus d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Delete</a>
 										  </td>
                                         </tr>
                                         [/foreach from=$uhotspot] 
@@ -51,50 +57,190 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Add Hotspot User</h5>
+								<h5 class="modal-title addedit" id="exampleModalLabel">Add Hotspot User</h5>
 								<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">×</span>
 								</button>
 							</div>
 							<div class="modal-body">
-							<form class="user" name="login_form" method="post" action="[$baseurl]">
+							<form class="user" id="add_update" name="add_update" method="post">
                                 <fieldset>
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Username" style="font-size: 13px;" name="nama" type="text" autofocus required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Password" style="font-size: 13px;" name="passw" type="text" required>
-                                    </div>
 									<div class="form-group">
-                                        <select class="form-control" style="font-size: 13px;" required>
+                                        <select class="form-control" name="server" id="server" style="font-size: 13px;" required>
+										  <option value="">-Select Server-</option>
+										  <option value="all">all</option>
+										  [foreach from=$server item=aItem type=json]
+										  <option value="[aItem.name]">[aItem.name]</option>
+										  [/foreach from=$server]
+										</select>
+                                    </div>
+                                   <div class="form-group row">
+											<div class="col-sm-6">
+												<input type="hidden" style="font-size: 13px;" class="form-control" name="iduser" id="iduser">
+												<input type="text" style="font-size: 13px;" class="form-control" name="user" id="user" placeholder="Userlogin" required>
+											</div>
+											<div class="col-sm-6">
+												<input type="text" style="font-size: 13px;" class="form-control" name="pass" id="pass" placeholder="Password"  required>
+											</div>
+									</div>
+									<div class="form-group">
+                                        <select class="form-control" name="group" id="group" style="font-size: 13px;" required>
 										  <option value="">-Select Group-</option>
-										  <option value="1">One</option>
-										  <option value="2">Two</option>
-										  <option value="3">Three</option>
+										  [foreach from=$profile item=aItem type=json]
+										  <option value="[aItem.name]">[aItem.name]</option>
+										  [/foreach from=$profile]
 										</select>
                                     </div>
 									<div class="form-group">
-                                        <input class="form-control" style="font-size: 13px;" name="limit" type="number" required>
+                                        <input class="form-control" placeholder="1h" style="font-size: 13px;" id="limit" name="limit" type="text" required>
                                     </div>
-									<div class="form-group row">
-											<div class="col-sm-6">
-												<input type="text" class="form-control" name="host"
-													placeholder="IP Address..." required>
-											</div>
-											<div class="col-sm-6">
-												<input type="text" class="form-control" name="port"
-													placeholder="Port..." value="8728" required>
-											</div>
-										</div>
+									
 									<div class="form-group">
-                                        <input class="form-control" placeholder="Catatan" style="font-size: 13px;" name="note" type="text">
+                                        <input class="form-control" placeholder="Comment" style="font-size: 13px;" id="comment" name="comment" type="text" required>
                                     </div>
                                 </fieldset>
 							</div>
 							<div class="modal-footer">
-								<a class="btn btn-primary">Save Hotspot User</a>
+								<a class="btn btn-success aksi"></a>
 							</div>
 							</form>
 						</div>
 					</div>
 				</div>
+				
+				<!-- Delete Modal -->
+				<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Delete Hotspot User?</h5>
+							<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<input type="hidden" id="idnya">
+						<div class="modal-body">
+							Are you sure to delete this user <b id="namanya"></b>?
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancel</button>
+							<a class="btn btn-danger btn-sm" href="#" id="hapusx">Delete</a>
+							<img src="[$themefullpath]/img/loading.gif" id="loadinghapus" />
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<!-- Page level plugins -->
+				<script src="[$themefullpath]/vendor/datatables/jquery.dataTables.min.js"></script>
+				<script src="[$themefullpath]/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+				<!-- Page level custom scripts -->
+				<script src="[$themefullpath]/js/demo/datatables-demo.js"></script>
+	
+				<script type="text/javascript">
+					$(document).ready(function() {
+					$('#dataTable').dataTable();
+					var table = $('#dataTable').DataTable();
+
+							// Hapus
+							$('#dataTable').on( 'click', '.hapus', function () {
+								if ( $(this).hasClass('selected') ) {
+									$(this).removeClass('selected');
+								}
+								else {
+									table.$('tr.selected').removeClass('selected');
+									$(this).addClass('selected');
+									var isi = $(this);
+									var id = isi.attr("id");
+									var nama = isi.attr("name");
+										$("#idnya").val(id);  				
+										$("#namanya").text(nama);  				
+										$("#deleteModal").modal("show");
+								}
+							});
+
+							$("#hapusx").click(function(){
+										$("#loadinghapus").show();
+										var id = $("#idnya").val();
+										$.ajax({
+											url: "[baseurl]admin/hotspotuser", 
+											type:"POST",
+											data: {aksi:"hapus",idh:id},
+											dataType: "json",
+											success : function(respon){
+												if (respon.code == 1){
+													location.reload();
+												} else {
+													$("#loadinghapus").hide();
+													exit();	
+												}
+											}
+										}); 
+							});
+						
+							// Edit
+							$('#dataTable').on( 'click', '.edit', function () {
+								if ( $(this).hasClass('selected') ) {
+									$(this).removeClass('selected');
+								}
+								else {
+									$('#add_update').trigger("reset");
+									table.$('tr.selected').removeClass('selected');
+									$(this).addClass('selected');
+									var isi = $(this);
+									var id = isi.attr("id");
+									var nama = isi.attr("name");
+									var pass = isi.attr("pass");
+									var limit = isi.attr("limit");
+									var group = isi.attr("group");
+									var comment = isi.attr("comment");
+										$("#iduser").val(id);  				
+										$("#user").val(nama);  				
+										$("#pass").val(pass);  				
+										$("#group").val(group);  				
+										$("#comment").val(comment);  				
+										$("#limit").val(limit);  				
+										$(".addedit").text('Edit Hotspot User'); 
+										$(".aksi").text('Update Hotspot User');
+										$("#addupdateModal").modal("show");
+								}
+							});
+							
+							// Add
+							$(".tambah").click(function(){
+								$('#add_update').trigger("reset");							
+								$(".addedit").text('Add Hotspot User');  				
+								$(".aksi").text('Save Hotspot User');  				
+								$("#addupdateModal").modal("show");
+							});
+						
+							$(".aksi").click(function(){
+								$("#loadinghapus").show();
+								var id = $("#iduser").val();
+								var server = $("#server").val();
+								var user = $("#user").val();
+								var pass = $("#pass").val();
+								var group = $("#group").val();
+								var limit = $("#limit").val();
+								var comment = $("#comment").val();
+								if (id==''){ var aksi='simpan'; } else { var aksi='update'; }
+										$.ajax({
+											url: "[baseurl]admin/hotspotuser", 
+											type:"POST",
+											data: {aksi:aksi,id:id,server:server,user:user,pass:pass,group:group,limit:limit,comment:comment},
+											dataType: "json",
+											success : function(respon){
+												if (respon.code == 1){
+													location.reload();
+												} else {
+													$("#loadinghapus").hide();
+													exit();	
+												}
+											}
+										}); 		
+							});
+
+						});
+					</script>

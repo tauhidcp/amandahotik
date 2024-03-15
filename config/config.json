@@ -18,15 +18,15 @@
   },
   "database" : {
     "default" : {
-      "driver" : "sqlite3",
+      "driver" : "",
       "hostname" : "localhost",
       "port" : "",
       "username" : "",
       "password" : "",
-      "database_name" : "login.db",
+      "database_name" : "",
       "charset" : "",
       "prefix" : "",
-      "library" : "sqlite3.dll"
+      "library" : ""
     }
   },
   "mailer" : {

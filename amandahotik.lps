@@ -10,21 +10,22 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="32"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="52"/>
       </Unit>
       <Unit>
         <Filename Value="routes.pas"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="55" Y="8"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="amandahotik_controller.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <CursorPos Y="45"/>
-        <UsageCount Value="42"/>
+        <CursorPos X="34" Y="59"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -33,17 +34,16 @@
         <EditorIndex Value="4"/>
         <TopLine Value="57"/>
         <CursorPos X="7" Y="24"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="hotspotuser_controller.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="76"/>
-        <CursorPos X="10" Y="30"/>
-        <UsageCount Value="31"/>
+        <TopLine Value="159"/>
+        <CursorPos X="162" Y="163"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -51,14 +51,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Koneksi"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="63" Y="77"/>
-        <UsageCount Value="29"/>
+        <CursorPos X="18" Y="46"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="D:\Master\FreePascal\FastPlaz\fastplaz\docs\README-new project.txt"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
@@ -66,46 +66,10 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="61"/>
         <CursorPos X="32" Y="70"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="27">
-      <Position>
-        <Filename Value="amandahotik_controller.pas"/>
-        <Caret Line="23" Column="5" TopLine="18"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="59" Column="11" TopLine="34"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="54" Column="35" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="60" Column="18" TopLine="52"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="33" Column="39" TopLine="25"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="54" Column="13" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="amandahotik_controller.pas"/>
-        <Caret Line="23" Column="6" TopLine="52"/>
-      </Position>
-      <Position>
-        <Filename Value="hotspotuser_controller.pas"/>
-        <Caret Line="33" Column="30" TopLine="10"/>
-      </Position>
-      <Position>
-        <Filename Value="amandahotik_controller.pas"/>
-        <Caret Line="74" Column="4" TopLine="65"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="amandahotik_controller.pas"/>
         <Caret Line="75" Column="14" TopLine="52"/>
@@ -133,10 +97,6 @@
       <Position>
         <Filename Value="hotspotuser_controller.pas"/>
         <Caret Line="62" Column="17" TopLine="34"/>
-      </Position>
-      <Position>
-        <Filename Value="koneksi.pas"/>
-        <Caret Line="20" Column="20" TopLine="27"/>
       </Position>
       <Position>
         <Filename Value="koneksi.pas"/>
@@ -181,6 +141,54 @@
       <Position>
         <Filename Value="hotspotuser_controller.pas"/>
         <Caret Line="51" Column="11" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="koneksi.pas"/>
+        <Caret Line="50" Column="6" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="amandahotik_controller.pas"/>
+        <Caret Line="73" Column="5" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="koneksi.pas"/>
+        <Caret Line="45" Column="39" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="koneksi.pas"/>
+        <Caret Line="16" Column="26"/>
+      </Position>
+      <Position>
+        <Filename Value="koneksi.pas"/>
+        <Caret Line="29" Column="3" TopLine="17"/>
+      </Position>
+      <Position>
+        <Filename Value="amandahotik_controller.pas"/>
+        <Caret Line="84" Column="26" TopLine="75"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="94" Column="44" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="102" Column="46" TopLine="99"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="26" Column="23" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="25" Column="18" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="85" Column="41" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="hotspotuser_controller.pas"/>
+        <Caret Line="98" Column="40" TopLine="83"/>
       </Position>
     </JumpHistory>
     <RunParams>

@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, html_lib, fpcgi, fpjson, json_lib, HTTPDefs, 
     fastplaz_handler, database_lib, dateutils, string_helpers, 
-    datetime_helpers, array_helpers, json_helpers, Koneksi;
+    datetime_helpers, array_helpers, json_helpers, Koneksi, IniFiles;
 
 type
 
@@ -26,6 +26,8 @@ type
 
   end;
 
+  var
+    IniCon   : TIniFile;
 
 implementation
 
@@ -36,6 +38,7 @@ constructor TAmandahotikController.CreateNew(AOwner: TComponent;
 begin
   inherited CreateNew(AOwner, CreateMode);
   BeforeRequest := @BeforeRequestHandler;
+
 end;
 
 destructor TAmandahotikController.Destroy;
@@ -54,6 +57,14 @@ procedure TAmandahotikController.Get;
 begin
   Tags['maincontent'] := @Tag_MainContent_Handler; //<<-- tag maincontent handler
   ThemeUtil.Assign('$error','');
+  IniCon := Tinifile.Create(ExtractFilePath(Application.exename)+'Koneksi.ini');
+  with IniCon do begin
+    ThemeUtil.Assign('$host',ReadString('CONFIG','Host','0'));
+    ThemeUtil.Assign('$user',ReadString('CONFIG','User','0'));
+    ThemeUtil.Assign('$pass',ReadString('CONFIG','Pass','0'));
+    ThemeUtil.Assign('$port',ReadString('CONFIG','Port','0'));
+    Free;
+  end;
   Response.Content := ThemeUtil.RenderFromContent(nil, '','themes/sbadmin/templates/login.html');
 end;
 
@@ -63,21 +74,42 @@ var
   login       : Boolean;
   con         : TKoneksi;
 begin
+
    con.setKoneksi(_POST['host'], _POST['username'], _POST['password'], _POST['port']);
    login:=con.getLogin;
    if login then
       begin
+
         _SESSION['userlogin'] := _POST['username'];
         _SESSION['host'] := _POST['host'];
         _SESSION['user'] := _POST['username'];
         _SESSION['pass'] := _POST['password'];
         _SESSION['port'] := _POST['port'];
-        Redirect('./admin'); end else
+
+        IniCon := Tinifile.Create(ExtractFilePath(Application.exename)+'Koneksi.ini');
+         with IniCon do begin
+           WriteString('CONFIG','Host',_POST['host']);
+           WriteString('CONFIG','User',_POST['username']);
+           WriteString('CONFIG','Pass',_POST['password']);
+           WriteString('CONFIG','Port',_POST['port']);
+         Free;
+         end;
+
+         Redirect('./admin'); end else
      begin
        ThemeUtil.Assign('$error', '<div style="font-size: 13px;" class="alert alert-danger alert-dismissible">'+
                                   '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'+
                                   'Login Failed!'+
                                   '</div>');
+
+       IniCon := Tinifile.Create(ExtractFilePath(Application.exename)+'Koneksi.ini');
+       with IniCon do begin
+        ThemeUtil.Assign('$host',ReadString('CONFIG','Host','0'));
+        ThemeUtil.Assign('$user',ReadString('CONFIG','User','0'));
+        ThemeUtil.Assign('$pass',ReadString('CONFIG','Pass','0'));
+        ThemeUtil.Assign('$port',ReadString('CONFIG','Port','0'));
+        Free;
+       end;
        Response.Content := ThemeUtil.RenderFromContent(nil, '','themes/sbadmin/templates/login.html');
      end;
 end;
